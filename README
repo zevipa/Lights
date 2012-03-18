@@ -2,3 +2,8 @@ Lights by Skyler Riske
 
 Lights is a game where you try to get all 9 squares to be lit.
 Every time you click a square, all adjacent squares will be either lit or turned off based on their current state
+
+Instructions:
+    
+    1] Make sure you have python2.7 or python3.2
+    2] Install PyQt4 from http://www.riverbankcomputing.co.uk/software/pyqt/download or your distro's repositories
