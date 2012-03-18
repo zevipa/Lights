@@ -96,6 +96,7 @@ class Lights(QtGui.QWidget):
         self.setWindowTitle('Lights')
         self.setGeometry(300, 300, 0, 0)
         self.setFixedSize(0,0)  # So the window is at its minimum size, and can't be maximized
+        self.setWindowIcon(QtGui.QIcon('LightsIcon16.png'))
         self.show()
 
     def reset(self):
