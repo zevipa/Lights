@@ -56,7 +56,7 @@ class Lights(QtGui.QWidget):
         self.blck9Light = 0
 
     def initUi(self):
-
+	    
         self.grid = QtGui.QGridLayout()  # main grid for the boxes
         # Add all the squares to the grid
         self.grid.addWidget(self.block1, 0, 0)
@@ -83,8 +83,10 @@ class Lights(QtGui.QWidget):
         self.bttnBox.addWidget(helpButton)
 
         # Label that will display something once the user has won
-        self.winLabel = QtGui.QLabel('Congrats! You have won!')
-        self.winLabel.hide()
+        self.winning_string = 'Congrats! you have won!'
+        self.winLabel = QtGui.QLabel(self.winning_string)
+	    # The user has not won yet, so we blank out the label.
+        self.winLabel.setText('')
 
         self.vbox = QtGui.QVBoxLayout()  # main vbox for the grid and label 
         self.vbox.addLayout(self.grid)
@@ -128,14 +130,14 @@ class Lights(QtGui.QWidget):
         self.blck9Light = 0
         self.block9.setPixmap(self.dark)
 
-        # Hide the winning! label
-        self.winLabel.hide()      
+        # Clear the winning label
+        self.winLabel.setText("") 
 
     def help(self):
         """Open a help dialog"""
         helpMessage = """The object of the game is to light up every square on the grid."""
         hlp = QtGui.QMessageBox()
-        hlp.information(self, "hai", helpMessage)
+        hlp.information(self, "help", helpMessage)
 
     def block1_click(self):
         """ Light or darken the block and all adjacent blocks"""
@@ -434,10 +436,10 @@ class Lights(QtGui.QWidget):
 			self.blck8Light == 1 and \
 			self.blck9Light == 1:
 
-            self.winLabel.show()
+            self.winLabel.setText(self.winning_string)
         else:
             # if all of the blocks aren't lit, or they aren't lit anymore
-            self.winLabel.hide()
+            self.winLabel.setText('')
 
 
 def main():
