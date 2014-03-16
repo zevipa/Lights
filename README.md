@@ -1,4 +1,4 @@
-# Lights by skyler riske
+# Lights
 This is my implementation of the game Lights, it is a game where you try "light" up all 9 squares
 Every time you click a square, all adjacent squares will be either lit or turned off based on their current state
 
